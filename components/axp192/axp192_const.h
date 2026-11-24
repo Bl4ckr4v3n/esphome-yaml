@@ -4,7 +4,7 @@
 #undef _BV
 #endif
 #define _BV(b)                          (1ULL << (uint64_t)(b))
-#define IS_BIT_SET(val,mask)            (((val)&(mask)) == (mask))
+#define AXP_IS_BIT_SET(val,mask)            (((val)&(mask)) == (mask))
 
 #define AXP192_SLAVE_ADDRESS                            (0x34)
 
