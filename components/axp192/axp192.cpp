@@ -1853,7 +1853,7 @@ bool AXP192::isDropWarningLevel2Irq(void)
 {
     uint8_t mask = XPOWERS_AXP192_WARNING_LEVEL2_IRQ;
     if (intRegister[0] & mask) {
-        return IS_BIT_SET(statusRegister[0], mask);
+        return AXP_IS_BIT_SET(statusRegister[0], mask);
     }
     return false;
 }
@@ -1862,7 +1862,7 @@ bool AXP192::isDropWarningLevel1Irq(void)
 {
     uint8_t mask = XPOWERS_AXP192_WARNING_LEVEL1_IRQ;
     if (intRegister[0] & mask) {
-        return IS_BIT_SET(statusRegister[0], mask);
+        return AXP_IS_BIT_SET(statusRegister[0], mask);
     }
     return false;
 }
@@ -1871,7 +1871,7 @@ bool AXP192::isGaugeWdtTimeoutIrq()
 {
     uint8_t mask = XPOWERS_AXP192_WDT_TIMEOUT_IRQ;
     if (intRegister[0] & mask) {
-        return IS_BIT_SET(statusRegister[0], mask);
+        return AXP_IS_BIT_SET(statusRegister[0], mask);
     }
     return false;
 }
@@ -1880,7 +1880,7 @@ bool AXP192::isStateOfChargeLowIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_GAUGE_NEW_SOC_IRQ;
     if (intRegister[0] & mask) {
-        return IS_BIT_SET(statusRegister[0], mask);
+        return AXP_IS_BIT_SET(statusRegister[0], mask);
     }
     return false;
 }
@@ -1889,7 +1889,7 @@ bool AXP192::isBatChargerOverTemperatureIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_BAT_CHG_OVER_TEMP_IRQ;
     if (intRegister[0] & mask) {
-        return IS_BIT_SET(statusRegister[0], mask);
+        return AXP_IS_BIT_SET(statusRegister[0], mask);
     }
     return false;
 }
@@ -1898,7 +1898,7 @@ bool AXP192::isBatChargerUnderTemperatureIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_BAT_CHG_UNDER_TEMP_IRQ;
     if (intRegister[0] & mask) {
-        return IS_BIT_SET(statusRegister[0], mask);
+        return AXP_IS_BIT_SET(statusRegister[0], mask);
     }
     return false;
 }
@@ -1907,7 +1907,7 @@ bool AXP192::isBatWorkOverTemperatureIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_BAT_NOR_OVER_TEMP_IRQ;
     if (intRegister[0] & mask) {
-        return IS_BIT_SET(statusRegister[0], mask);
+        return AXP_IS_BIT_SET(statusRegister[0], mask);
     }
     return false;
 }
@@ -1916,7 +1916,7 @@ bool AXP192::isBatWorkUnderTemperatureIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_BAT_NOR_UNDER_TEMP_IRQ;
     if (intRegister[0] & mask) {
-        return IS_BIT_SET(statusRegister[0], mask);
+        return AXP_IS_BIT_SET(statusRegister[0], mask);
     }
     return false;
 }
@@ -1926,7 +1926,7 @@ bool AXP192::isVbusInsertIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_VBUS_INSERT_IRQ  >> 8;
     if (intRegister[1] & mask) {
-        return IS_BIT_SET(statusRegister[1], mask);
+        return AXP_IS_BIT_SET(statusRegister[1], mask);
     }
     return false;
 }
@@ -1935,7 +1935,7 @@ bool AXP192::isVbusRemoveIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_VBUS_REMOVE_IRQ  >> 8;
     if (intRegister[1] & mask) {
-        return IS_BIT_SET(statusRegister[1], mask);
+        return AXP_IS_BIT_SET(statusRegister[1], mask);
     }
     return false;
 }
@@ -1944,7 +1944,7 @@ bool AXP192::isBatInsertIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_BAT_INSERT_IRQ  >> 8;
     if (intRegister[1] & mask) {
-        return IS_BIT_SET(statusRegister[1], mask);
+        return AXP_IS_BIT_SET(statusRegister[1], mask);
     }
     return false;
 }
@@ -1953,7 +1953,7 @@ bool AXP192::isBatRemoveIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_BAT_REMOVE_IRQ  >> 8;
     if (intRegister[1] & mask) {
-        return IS_BIT_SET(statusRegister[1], mask);
+        return AXP_IS_BIT_SET(statusRegister[1], mask);
     }
     return false;
 }
@@ -1962,7 +1962,7 @@ bool AXP192::isPekeyShortPressIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_PKEY_SHORT_IRQ  >> 8;
     if (intRegister[1] & mask) {
-        return IS_BIT_SET(statusRegister[1], mask);
+        return AXP_IS_BIT_SET(statusRegister[1], mask);
     }
     return false;
 
@@ -1972,7 +1972,7 @@ bool AXP192::isPekeyLongPressIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_PKEY_LONG_IRQ  >> 8;
     if (intRegister[1] & mask) {
-        return IS_BIT_SET(statusRegister[1], mask);
+        return AXP_IS_BIT_SET(statusRegister[1], mask);
     }
     return false;
 }
@@ -1981,7 +1981,7 @@ bool AXP192::isPekeyNegativeIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_PKEY_NEGATIVE_IRQ  >> 8;
     if (intRegister[1] & mask) {
-        return IS_BIT_SET(statusRegister[1], mask);
+        return AXP_IS_BIT_SET(statusRegister[1], mask);
     }
     return false;
 }
@@ -1990,7 +1990,7 @@ bool AXP192::isPekeyPositiveIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_PKEY_POSITIVE_IRQ  >> 8;
     if (intRegister[1] & mask) {
-        return IS_BIT_SET(statusRegister[1], mask);
+        return AXP_IS_BIT_SET(statusRegister[1], mask);
     }
     return false;
 }
@@ -2000,7 +2000,7 @@ bool AXP192::isWdtExpireIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_WDT_EXPIRE_IRQ  >> 16;
     if (intRegister[2] & mask) {
-        return IS_BIT_SET(statusRegister[2], mask);
+        return AXP_IS_BIT_SET(statusRegister[2], mask);
     }
     return false;
 }
@@ -2009,7 +2009,7 @@ bool AXP192::isLdoOverCurrentIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_LDO_OVER_CURR_IRQ  >> 16;
     if (intRegister[2] & mask) {
-        return IS_BIT_SET(statusRegister[2], mask);
+        return AXP_IS_BIT_SET(statusRegister[2], mask);
     }
     return false;
 }
@@ -2018,7 +2018,7 @@ bool AXP192::isBatChargeDoneIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_BAT_CHG_DONE_IRQ  >> 16;
     if (intRegister[2] & mask) {
-        return IS_BIT_SET(statusRegister[2], mask);
+        return AXP_IS_BIT_SET(statusRegister[2], mask);
     }
     return false;
 }
@@ -2027,7 +2027,7 @@ bool AXP192::isBatChargeStartIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_BAT_CHG_START_IRQ  >> 16;
     if (intRegister[2] & mask) {
-        return IS_BIT_SET(statusRegister[2], mask);
+        return AXP_IS_BIT_SET(statusRegister[2], mask);
     }
     return false;
 }
@@ -2036,7 +2036,7 @@ bool AXP192::isBatDieOverTemperatureIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_DIE_OVER_TEMP_IRQ  >> 16;
     if (intRegister[2] & mask) {
-        return IS_BIT_SET(statusRegister[2], mask);
+        return AXP_IS_BIT_SET(statusRegister[2], mask);
     }
     return false;
 }
@@ -2045,7 +2045,7 @@ bool AXP192::isChargeOverTimeoutIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_CHARGER_TIMER_IRQ  >> 16;
     if (intRegister[2] & mask) {
-        return IS_BIT_SET(statusRegister[2], mask);
+        return AXP_IS_BIT_SET(statusRegister[2], mask);
     }
     return false;
 }
@@ -2054,7 +2054,7 @@ bool AXP192::isBatOverVoltageIrq(void)
 {
     uint8_t mask = XPOWERS_AXP192_BAT_OVER_VOL_IRQ  >> 16;
     if (intRegister[2] & mask) {
-        return IS_BIT_SET(statusRegister[2], mask);
+        return AXP_IS_BIT_SET(statusRegister[2], mask);
     }
     return false;
 }
